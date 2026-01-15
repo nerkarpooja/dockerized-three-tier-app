@@ -45,7 +45,7 @@ The project showcases real-world DevOps fundamentals such as container networkin
 │   └── config
 │       └── default.conf
 ├── docker-compose.yml
-
+```
 
 ---
 
