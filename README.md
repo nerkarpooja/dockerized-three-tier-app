@@ -31,25 +31,28 @@ The project showcases real-world DevOps fundamentals such as container networkin
 
 ## 📂 Project Structure
 
+```text
 3-tier/
 ├── app
-│ └── code
-│ └── submit.php
+│   └── code
+│       └── submit.php
 ├── db
-│ ├── Dockerfile
-│ └── init.sql
+│   ├── Dockerfile
+│   └── init.sql
 ├── web
-│ ├── code
-│ │ └── signup.html
-│ └── config
-│ └── default.conf
+│   ├── code
+│   │   └── signup.html
+│   └── config
+│       └── default.conf
+├── docker-compose.yml
 
 
 ---
 
 ## 🧩 Architecture Overview
 
-![Three-Tier Architecture](architecture.png)
+![Three-Tier Architecture](screenshots/architecture.png)
+
 
 **Flow:**
 1. User accesses the registration page via browser.
