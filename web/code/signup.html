@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Registration</title>
+
+<style>
+/* Reset */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animated gradient background */
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #43cea2, #185a9d);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass card */
+.card {
+    width: 420px;
+    padding: 35px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Input group */
+.group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.group input,
+.group textarea,
+.group select {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+.group textarea {
+    resize: none;
+    height: 70px;
+}
+
+/* Floating label */
+.group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #777;
+    font-size: 13px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s;
+    background: white;
+    padding: 0 6px;
+}
+
+.group input:focus + label,
+.group textarea:focus + label,
+.group input:not(:placeholder-shown) + label,
+.group textarea:not(:placeholder-shown) + label {
+    top: -7px;
+    font-size: 11px;
+    color: #667eea;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 12px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Registration Form</h2>
+
+    <form action="submit.php" method="POST" id="regForm">
+
+        <div class="group">
+            <input type="text" name="name" required placeholder=" ">
+            <label>Full Name</label>
+        </div>
+
+        <div class="group">
+            <input type="email" name="email" required placeholder=" ">
+            <label>Email Address</label>
+        </div>
+
+        <div class="group">
+            <input type="text" name="website" placeholder=" ">
+            <label>Website</label>
+        </div>
+
+        <div class="group">
+            <textarea name="comment" placeholder=" "></textarea>
+            <label>Comment</label>
+        </div>
+
+        <div class="group">
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="footer">
+        Three-Tier Docker Project
+    </div>
+</div>
+
+<script>
+/* Button loading effect */
+document.getElementById("regForm").addEventListener("submit", function () {
+    const btn = document.querySelector("button");
+    btn.innerText = "Submitting...";
+    btn.style.opacity = "0.8";
+});
+</script>
+
+</body>
+</html>
