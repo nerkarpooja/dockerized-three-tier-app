@@ -63,7 +63,21 @@ The project showcases real-world DevOps fundamentals such as container networkin
 6. Response is sent back to the user.
 
 ---
+🐳 Install Docker Compose (Manual Method for RHEL/CentOS)
 
+If docker-compose-plugin is not available in your repositories, install Docker Compose manually:
+
+1. Download Docker Compose Binary
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.29.7/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+2. Make it Executable
+sudo chmod +x /usr/local/bin/docker-compose
+
+3. Verify Installation
+docker-compose version
+
+
+You should see the Docker Compose version output.
 ## 🖼️ Screenshots
 
 ### 🔹 Registration Page (Frontend UI)
